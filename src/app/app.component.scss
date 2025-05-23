@@ -1,0 +1,242 @@
+.form-container {
+  width: 100%;
+  margin-top: 5em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  // aspect-ratio: 16 / 9;
+  width: 100%;
+  // overflow: hidden;
+}
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* o "contain" */
+}
+
+.iframe-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  border-radius: 16px;
+  margin-top: 5em;
+  justify-content: center;
+  p {
+    margin-top: 1em;
+  }
+  h1 {
+    margin-top: 2em;
+  }
+}
+
+.detail-container {
+  h1,
+  h4 {
+    margin-top: 2em;
+    text-align: start;
+  }
+  p {
+    margin-top: 1em;
+  }
+  height: 100%;
+  position: relative;
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.present-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.breaker-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.line {
+  width: 30%;
+  height: 2px;
+  background-color: #d6a89e;
+  margin: 0 auto;
+}
+
+.copy-text {
+  display: inline-flex;
+  align-items: center;
+}
+
+.copy-icon {
+  margin-left: 10px;
+  width: 20px;
+  height: auto;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  color: black;
+  background-color: black;
+}
+
+.timeline-container {
+  height: 100%;
+  position: relative;
+  border-radius: 16px;
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  // margin: 0 auto;
+  padding: 2rem 0;
+  // right: -10%;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: #d6a89e;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  padding: 1rem 2rem;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  right: -10px;
+  background-color: #d6a89e;
+  border: 4px solid white;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+// .timeline-item.right {
+//   left: 50%;
+//   text-align: left;
+// }
+
+// .timeline-item.right::after {
+//   left: -10px;
+// }
+
+.content {
+  background: #eff3ec;
+  padding: 1rem;
+  border-radius: 6px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content h3 {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 10px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 25px;
+    text-align: left;
+  }
+
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-item.left {
+    left: 0;
+  }
+
+  .timeline-item::after,
+  .timeline-item.right::after {
+    left: 0;
+  }
+}
+
+.overlay-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(75, 75, 75, 0.4); // sfondo semitrasparente
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .card-content {
+    background-color: #faf6f0; // $background-color
+    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    color: #4b4b4b; // $text-color
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 2px solid #eff3ec; // $primary-color
+
+    h2 {
+      color: #5a6e4f; // $title-color
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    button {
+      background-color: #d6a89e; // $secondary-color
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s;
+
+      &:hover {
+        background-color: darken(#d6a89e, 10%);
+      }
+    }
+  }
+}
